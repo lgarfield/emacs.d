@@ -1,5 +1,8 @@
 (require-package 'tidy)
-(add-hook 'html-mode-hook (lambda () (tidy-build-menu html-mode-map)))
+(add-hook 'html-mode-hook
+          (lambda ()
+            (tidy-build-menu html-mode-map)
+            (set (make-local-variable 'sgml-basic-offset) 4)))
 
 (require-package 'tagedit)
 (after-load 'sgml-mode
